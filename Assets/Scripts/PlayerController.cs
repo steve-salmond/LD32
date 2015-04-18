@@ -25,7 +25,8 @@ public class PlayerController : Singleton<PlayerController>
     private Animator _animator;
 
     private bool _grounded;
-    private bool _facingRight;
+    private bool _facingRight = true;
+    private bool _aimingRight = true;
 
 	void Start()
 	{
@@ -71,8 +72,13 @@ public class PlayerController : Singleton<PlayerController>
         // var runSpeed = _grounded ? Input.GetAxis("Horizontal") : 0;
         _animator.SetFloat("RunSpeed", Input.GetAxis("Horizontal"));
 
-        // Update pelvis facing.
-        _facingRight = velocity.x >= 0;
+        // Update player's overall facing.
+        if (Mathf.Approximately(velocity.x, 0))
+            _facingRight = _aimingRight;
+        else 
+            _facingRight = velocity.x >= 0;
+
+        // Update pelvis scale to match facing.
         Pelvis.localScale = _facingRight ? Vector3.one : new Vector3(-1, 1, 1);
     }
 
@@ -96,11 +102,14 @@ public class PlayerController : Singleton<PlayerController>
         Vector2 pelvis = Pelvis.position;
         var delta = mouse - pelvis;
         var angle = Vector2.Angle(delta, Vector2.up);
-        var aimingRight = _facingRight ? (delta.x >= 0) : (delta.x < 0);
+        var flip = _facingRight ? (delta.x >= 0) : (delta.x < 0);
+
+        // Determine if player is aiming to the right or left.
+        _aimingRight = delta.x >= 0;
 
         // Update player's torso to point gun at mouse.
-        Torso.localRotation = Quaternion.Euler(0, 0, aimingRight ? 90 - angle : angle - 90);
-        Torso.localScale = aimingRight ? Vector3.one : new Vector3(-1, 1, 1);
+        Torso.localRotation = Quaternion.Euler(0, 0, flip ? 90 - angle : angle - 90);
+        Torso.localScale = flip ? Vector3.one : new Vector3(-1, 1, 1);
 
         CameraController.Instance.AimOffset = delta.normalized * AimOffsetScale;
     }
