@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,12 +43,26 @@ public class Gun : MonoBehaviour
     /** Blow effect. */
     public GameObject BlowEffect;
 
+    /** Sucking start sound. */
+    public AudioSource SuckStartSound;
+
+    /** Sucking loop sound. */
+    public AudioSource SuckLoopSound;
+
+    /** Sucking end sound. */
+    public AudioSource SuckStopSound;
 
     /** Time that next projectile can be fired. */
     private float _nextProjectile;
 
     /** Emitter direction vector. */
     private Vector3 _direction;
+
+    /** Whether gun is sucking. */
+    private bool _sucking;
+
+    /** Whether gun is blowing. */
+    private bool _blowing;
 
     /** List of previously created projectiles. */
     private readonly Queue<GameObject> _projectiles = new Queue<GameObject>();
@@ -59,22 +74,60 @@ public class Gun : MonoBehaviour
     {
         _suckParticles = SuckEffect.GetComponentsInChildren<ParticleSystem>();
         _blowParticles = BlowEffect.GetComponentsInChildren<ParticleSystem>();
+
+        StartCoroutine("SuckRoutine");
+        StartCoroutine("BlowRoutine");
     }
 
     void Update()
     {
-        var blowing = Input.GetButton("Fire1");
-        var sucking = !blowing && Input.GetButton("Fire2");
+        _blowing = Input.GetButton("Fire1");
+        _sucking = !_blowing && Input.GetButton("Fire2");
 
-        if (blowing)
+        if (_blowing)
             Blow();
-        else if (sucking)
+        else if (_sucking)
             Suck();
 
         foreach (var system in _suckParticles)
-            system.enableEmission = sucking;
+            system.enableEmission = _sucking;
         foreach (var system in _blowParticles)
-            system.enableEmission = blowing;
+            system.enableEmission = _blowing;
+    }
+
+    IEnumerator SuckRoutine()
+    {
+        var wait = new WaitForEndOfFrame();
+        while (gameObject.activeSelf)
+        {
+
+            while (!_sucking)
+                yield return wait;
+
+            SuckStartSound.Play();
+
+            yield return new WaitForSeconds(0.5f);
+            SuckLoopSound.Play();
+
+            while (_sucking)
+                yield return wait;
+
+            SuckStopSound.Play();
+
+            yield return new WaitForSeconds(0.1f);
+            SuckLoopSound.Stop();
+
+            yield return wait;
+        }
+    }
+
+    IEnumerator BlowRoutine()
+    {
+        var wait = new WaitForEndOfFrame();
+        while (gameObject.activeSelf)
+        {
+            yield return wait;
+        }
     }
 
     void LateUpdate()
