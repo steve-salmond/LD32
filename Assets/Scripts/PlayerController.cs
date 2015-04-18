@@ -19,7 +19,8 @@ public class PlayerController : Singleton<PlayerController>
     public float MovingDrag = 0;
 
     public float AimOffsetScale = 5;
-
+    public Gun Gun;
+    
     private Camera _camera;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
@@ -44,8 +45,11 @@ public class PlayerController : Singleton<PlayerController>
         // Detect when player wishes to jump.
         // Do this in Update, since it can be missed in FixedUpdate().
         _jump = Input.GetButtonDown("Jump");
-
         UpdateJump();
+
+        // Handle player firing.
+        if (Input.GetButton("Fire1"))
+            Gun.Fire();
     }
 
     void FixedUpdate()
@@ -89,7 +93,7 @@ public class PlayerController : Singleton<PlayerController>
         _animator.SetFloat("RunSpeed", Input.GetAxis("Horizontal"));
 
         // Update player's overall facing.
-        if (Mathf.Abs(velocity.x) < 0.1f)
+        if (Mathf.Abs(velocity.x) < 0.25f)
             _facingRight = _aimingRight;
         else 
             _facingRight = velocity.x >= 0;
