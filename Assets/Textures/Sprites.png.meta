@@ -1,0 +1,355 @@
+fileFormatVersion: 2
+guid: 1292cea4c892c2140a1b74cf4f095d5a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HeroHead
+    21300002: Rabbit
+    21300004: Bullet
+    21300006: Bacon
+    21300008: PoolBall
+    21300010: Rocket
+    21300012: Lollipop
+    21300014: Block
+    21300016: HeroGun
+    21300018: HeroPack
+    21300020: HeroTorso
+    21300022: Bomb
+    21300024: Frog
+    21300026: HeroPelvis
+    21300028: Banana
+    21300030: HeroRightupperLeg
+    21300032: HeroLeftUpperLeg
+    21300034: Shuriken
+    21300036: Boot
+    21300038: Flower
+    21300040: Tomato
+    21300042: HeroRightLowerLeg
+    21300044: HeroLeftLowerLeg
+    21300046: Egg
+    21300048: Badger
+    21300050: Turnip
+    21300052: HeroRightFoot
+    21300054: HeroLeftFoot
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: HeroHead
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1832
+        width: 133
+        height: 158
+      alignment: 9
+      pivot: {x: .286154717, y: .168403715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rabbit
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1805
+        width: 144
+        height: 211
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullet
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1928
+        width: 131
+        height: 57
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bacon
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 1907
+        width: 208
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PoolBall
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 1912
+        width: 67
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rocket
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 1813
+        width: 240
+        height: 66
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Lollipop
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1739
+        width: 104
+        height: 165
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Block
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 1773
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroGun
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 1817
+        width: 449
+        height: 218
+      alignment: 9
+      pivot: {x: .145326674, y: .705466747}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroPack
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1543
+        width: 168
+        height: 244
+      alignment: 9
+      pivot: {x: .785127163, y: .647237837}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroTorso
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 1552
+        width: 170
+        height: 237
+      alignment: 9
+      pivot: {x: .350308061, y: .133665442}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bomb
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1627
+        width: 112
+        height: 149
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frog
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1621
+        width: 170
+        height: 142
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroPelvis
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 1648
+        width: 145
+        height: 123
+      alignment: 9
+      pivot: {x: .37611714, y: .609529793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Banana
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1631
+        width: 127
+        height: 94
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroRightupperLeg
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1399
+        width: 130
+        height: 202
+      alignment: 9
+      pivot: {x: .730295062, y: .877934515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroLeftUpperLeg
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1407
+        width: 124
+        height: 204
+      alignment: 9
+      pivot: {x: .19820182, y: .866891325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Shuriken
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1467
+        width: 134
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Boot
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 1457
+        width: 178
+        height: 112
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Flower
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 1445
+        width: 116
+        height: 164
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tomato
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1479
+        width: 105
+        height: 86
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroRightLowerLeg
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1160
+        width: 154
+        height: 215
+      alignment: 9
+      pivot: {x: .694405079, y: .855082691}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroLeftLowerLeg
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 1151
+        width: 103
+        height: 222
+      alignment: 9
+      pivot: {x: .601731956, y: .864114821}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Egg
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1319
+        width: 81
+        height: 107
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Badger
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 1184
+        width: 230
+        height: 241
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Turnip
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 1253
+        width: 121
+        height: 158
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroRightFoot
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 1073
+        width: 100
+        height: 66
+      alignment: 9
+      pivot: {x: .275462657, y: .794847906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HeroLeftFoot
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1048
+        width: 124
+        height: 73
+      alignment: 9
+      pivot: {x: .282705486, y: .86910218}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
