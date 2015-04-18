@@ -13,7 +13,7 @@ public class PlayerController : Singleton<PlayerController>
     public float JumpForce = 1000;
 
     public LayerMask GroundMask;
-    public float GroundDistance = 0.1f;
+    public Vector2 GroundArea = new Vector2(3, 1);
 
     public float IdleDrag = 1;
     public float MovingDrag = 0;
@@ -28,12 +28,23 @@ public class PlayerController : Singleton<PlayerController>
     private bool _facingRight = true;
     private bool _aimingRight = true;
 
+    private bool _jump;
+
 	void Start()
 	{
         _camera = CameraController.Instance.camera;
 	    _rigidbody2D = GetComponent<Rigidbody2D>();
 	    _animator = GetComponent<Animator>();
 	}
+
+    void Update()
+    {
+        // Detect when player wishes to jump.
+        // Do this in Update, since it can be missed in FixedUpdate().
+        _jump = Input.GetButtonDown("Jump");
+
+        UpdateJump();
+    }
 
     void FixedUpdate()
     {
@@ -46,8 +57,11 @@ public class PlayerController : Singleton<PlayerController>
     void UpdateGrounded()
     {
         // Check if player is grounded.
-        var hit = Physics2D.Raycast(transform.position, new Vector2(0, -1), GroundDistance, GroundMask);
-        _grounded = hit.collider != null;
+        Vector2 p = transform.position;
+        var a = p - GroundArea * 0.5f;
+        var b = p + GroundArea * 0.5f;
+        var hit = Physics2D.OverlapArea(a, b, GroundMask);
+        _grounded = hit != null;
     }
 
     void UpdateMovement()
@@ -73,7 +87,7 @@ public class PlayerController : Singleton<PlayerController>
         _animator.SetFloat("RunSpeed", Input.GetAxis("Horizontal"));
 
         // Update player's overall facing.
-        if (Mathf.Approximately(velocity.x, 0))
+        if (Mathf.Abs(velocity.x) < 0.1f)
             _facingRight = _aimingRight;
         else 
             _facingRight = velocity.x >= 0;
@@ -85,7 +99,7 @@ public class PlayerController : Singleton<PlayerController>
     void UpdateJump()
     {
         // Check if player wishes to jump and is grounded.
-        if (!Input.GetButtonDown("Jump") || !_grounded)
+        if (!_jump || !_grounded)
             return;
 
         // Apply jump force.
@@ -93,6 +107,9 @@ public class PlayerController : Singleton<PlayerController>
 
         // Inform animator that jump has occurred.
         _animator.SetTrigger("Jump");
+
+        // Don't jump until next frame.
+        _jump = false;
     }
 
     void UpdateAim()
