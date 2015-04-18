@@ -30,6 +30,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private bool _jump;
 
+    private Plane _worldPlane = new Plane(Vector3.back, 0);
+
 	void Start()
 	{
         _camera = CameraController.Instance.camera;
@@ -114,8 +116,13 @@ public class PlayerController : Singleton<PlayerController>
 
     void UpdateAim()
     {
+        var ray = _camera.ScreenPointToRay(Input.mousePosition);
+        var d = 0.0f;
+        _worldPlane.Raycast(ray, out d);
+        
+
         // Get mouse's angle relative to player.
-        Vector2 mouse = _camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mouse = ray.GetPoint(d); // _camera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 pelvis = Pelvis.position;
         var delta = mouse - pelvis;
         var angle = Vector2.Angle(delta, Vector2.up);
