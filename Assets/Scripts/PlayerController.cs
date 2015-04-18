@@ -18,6 +18,8 @@ public class PlayerController : Singleton<PlayerController>
     public float IdleDrag = 1;
     public float MovingDrag = 0;
 
+    public float AimOffsetScale = 5;
+
     private Camera _camera;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
@@ -32,7 +34,7 @@ public class PlayerController : Singleton<PlayerController>
 	    _animator = GetComponent<Animator>();
 	}
 
-    void Update()
+    void FixedUpdate()
     {
         UpdateGrounded();
         UpdateMovement();
@@ -59,19 +61,15 @@ public class PlayerController : Singleton<PlayerController>
         // Ajust player's drag depending on whether they wish to move or not.
         _rigidbody2D.drag = Mathf.Approximately(dx, 0) ? IdleDrag : MovingDrag;
 
-        // Check if player is travelling too fast already.
+        // Update player's movement force from inputs.
         var velocity = _rigidbody2D.velocity;
         var speed = velocity.magnitude;
-        if (Math.Sign(dx) == Math.Sign(velocity.x) && speed > MaxSpeed)
-            return;
-
-        // Update player's movement from inputs.
-        var f = new Vector2(dx, dy);
-        _rigidbody2D.AddForce(f);
+        if (Math.Sign(dx) != Math.Sign(velocity.x) || speed < MaxSpeed)
+            _rigidbody2D.AddForce(new Vector2(dx, dy));
 
         // Update animator state.
-        var runSpeed = _grounded ? Input.GetAxis("Horizontal") : 0;
-        _animator.SetFloat("RunSpeed", runSpeed);
+        // var runSpeed = _grounded ? Input.GetAxis("Horizontal") : 0;
+        _animator.SetFloat("RunSpeed", Input.GetAxis("Horizontal"));
 
         // Update pelvis facing.
         _facingRight = velocity.x >= 0;
@@ -103,5 +101,7 @@ public class PlayerController : Singleton<PlayerController>
         // Update player's torso to point gun at mouse.
         Torso.localRotation = Quaternion.Euler(0, 0, aimingRight ? 90 - angle : angle - 90);
         Torso.localScale = aimingRight ? Vector3.one : new Vector3(-1, 1, 1);
+
+        CameraController.Instance.AimOffset = delta.normalized * AimOffsetScale;
     }
 }
