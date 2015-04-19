@@ -67,6 +67,9 @@ public class Gun : MonoBehaviour
     /** Fire effect. */
     public GameObject FireEffect;
 
+
+    public string JunkLayer;
+
     /** Time that next projectile can be fired. */
     private float _nextProjectile;
 
@@ -181,6 +184,9 @@ public class Gun : MonoBehaviour
                 projectile.SetActive(false);
                 _projectiles.Enqueue(projectile);
 
+                // Capture the object.
+                Capture(sucker.collider.gameObject);
+
                 // Play capture effect.
                 var parent = SuckEffect.transform;
                 var effect = Instantiate(CaptureEffect, parent.position, parent.rotation) as GameObject;
@@ -193,6 +199,22 @@ public class Gun : MonoBehaviour
                 r.AddForce(f);
             }
         }
+    }
+
+    void Capture(GameObject go)
+    {
+        // Break any joints on the object.
+        var joint = go.GetComponent<Joint2D>();
+        if (joint)
+            Destroy(joint);
+
+        // Unparent object and turn it into junk.
+        go.layer = LayerMask.NameToLayer(JunkLayer);
+        go.transform.parent = null;
+
+        // Chapture any child objects.
+        while (go.transform.childCount > 0)
+            Capture(go.transform.GetChild(0).gameObject);
     }
 
 

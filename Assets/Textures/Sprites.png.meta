@@ -30,6 +30,31 @@ TextureImporter:
     21300050: Turnip
     21300052: HeroRightFoot
     21300054: HeroLeftFoot
+    21300056: RobotShoulder01
+    21300058: RobotShoulder02
+    21300060: RobotUpperLeg01
+    21300062: RobotFoot01
+    21300064: RobotFoot02
+    21300066: RobotRadarDish
+    21300068: RobotHead01
+    21300070: RobotHead02
+    21300072: RobotHead03
+    21300074: RobotHead04
+    21300076: RobotHead05
+    21300078: RobotPincer
+    21300080: RobotTorso01
+    21300082: RobotTorso02
+    21300084: RobotTorso03
+    21300086: RobotTorso04
+    21300088: RobotUpperLeg02
+    21300090: RobotSaw
+    21300092: RobotDrill
+    21300094: RobotWheel
+    21300096: RobotGun02
+    21300098: RobotGun01
+    21300100: RobotLimb01
+    21300102: RobotLimb02
+    21300104: RobotLimb03
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -350,6 +375,256 @@ TextureImporter:
         height: 73
       alignment: 9
       pivot: {x: .282705486, y: .86910218}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotShoulder01
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 809
+        width: 198
+        height: 178
+      alignment: 9
+      pivot: {x: .472952634, y: .364611685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotShoulder02
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 608
+        width: 226
+        height: 160
+      alignment: 9
+      pivot: {x: .567139685, y: .416322708}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotUpperLeg01
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 573
+        width: 178
+        height: 403
+      alignment: 9
+      pivot: {x: .560172796, y: .845508337}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotFoot01
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 415
+        width: 190
+        height: 164
+      alignment: 9
+      pivot: {x: .655024052, y: .783008099}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotFoot02
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 261
+        width: 188
+        height: 123
+      alignment: 9
+      pivot: {x: .746879101, y: .659645915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotRadarDish
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 815
+        width: 140
+        height: 194
+      alignment: 9
+      pivot: {x: .123848617, y: .371176809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotHead01
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 815
+        width: 208
+        height: 214
+      alignment: 9
+      pivot: {x: .633026123, y: .132965088}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotHead02
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 816
+        width: 155
+        height: 184
+      alignment: 9
+      pivot: {x: .517275691, y: .0925259814}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotHead03
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 832
+        width: 160
+        height: 168
+      alignment: 9
+      pivot: {x: .589256287, y: .106847487}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotHead04
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 827
+        width: 139
+        height: 174
+      alignment: 9
+      pivot: {x: .512842834, y: .0820750967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotHead05
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 831
+        width: 148
+        height: 170
+      alignment: 9
+      pivot: {x: .578400493, y: .0852208734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotPincer
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 629
+        width: 116
+        height: 124
+      alignment: 9
+      pivot: {x: .492305368, y: .83831048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotTorso01
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 465
+        width: 225
+        height: 287
+      alignment: 9
+      pivot: {x: .511900783, y: .101923183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotTorso02
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 463
+        width: 172
+        height: 284
+      alignment: 9
+      pivot: {x: .474053681, y: .0662896633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotTorso03
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 469
+        width: 258
+        height: 283
+      alignment: 9
+      pivot: {x: .48616159, y: .061603345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotTorso04
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 453
+        width: 261
+        height: 294
+      alignment: 9
+      pivot: {x: .53077811, y: .0901495516}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotUpperLeg02
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 271
+        width: 127
+        height: 316
+      alignment: 9
+      pivot: {x: .605420709, y: .864369273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotSaw
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 195
+        width: 261
+        height: 240
+      alignment: 9
+      pivot: {x: .4909392, y: .513137937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotDrill
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 35
+        width: 174
+        height: 141
+      alignment: 9
+      pivot: {x: .882331908, y: .533970416}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotWheel
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 39
+        width: 164
+        height: 148
+      alignment: 9
+      pivot: {x: .517476499, y: .433548689}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotGun02
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 131
+        width: 324
+        height: 134
+      alignment: 9
+      pivot: {x: .745179355, y: .500000477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotGun01
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 303
+        width: 313
+        height: 129
+      alignment: 9
+      pivot: {x: .845048726, y: .486162513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotLimb01
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 93
+        width: 136
+        height: 316
+      alignment: 9
+      pivot: {x: .578755975, y: .875667334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotLimb02
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 88
+        width: 131
+        height: 296
+      alignment: 9
+      pivot: {x: .561321259, y: .861849904}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RobotLimb03
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 141
+        width: 105
+        height: 251
+      alignment: 9
+      pivot: {x: .5, y: .798706412}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
