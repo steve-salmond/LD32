@@ -64,6 +64,9 @@ public class Gun : MonoBehaviour
     /** Capture effect. */
     public GameObject CaptureEffect;
 
+    /** Captured object effect. */
+    public GameObject CapturedEffect;
+
     /** Fire effect. */
     public GameObject FireEffect;
 
@@ -94,7 +97,9 @@ public class Gun : MonoBehaviour
         _blowParticles = BlowEffect.GetComponentsInChildren<ParticleSystem>();
 
         StartCoroutine("SuckRoutine");
-        StartCoroutine("BlowRoutine");
+
+        // Disabled blowing sounds since there are now firing effects.
+        // StartCoroutine("BlowRoutine");
     }
 
     void Update()
@@ -191,6 +196,9 @@ public class Gun : MonoBehaviour
                 var parent = SuckEffect.transform;
                 var effect = Instantiate(CaptureEffect, parent.position, parent.rotation) as GameObject;
                 effect.transform.parent = parent.transform;
+
+                // Play captured object effect.
+                Instantiate(CapturedEffect, sucker.transform.position, sucker.transform.rotation);
             }
             else
             {

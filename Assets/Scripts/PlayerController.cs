@@ -41,7 +41,7 @@ public class PlayerController : Singleton<PlayerController>
 
 	void Start()
 	{
-        _camera = CameraController.Instance.camera;
+        _camera = CameraController.Instance.Camera;
 	    _rigidbody2D = GetComponent<Rigidbody2D>();
 	    _animator = GetComponent<Animator>();
 	}
