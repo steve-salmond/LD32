@@ -70,6 +70,9 @@ public class Gun : MonoBehaviour
     /** Fire effect. */
     public GameObject FireEffect;
 
+    /** Capture capacity. */
+    public int CaptureCapacity = 20;
+
 
     public string JunkLayer;
 
@@ -184,7 +187,7 @@ public class Gun : MonoBehaviour
             var delta = Emitter.position - sucker.transform.position;
             var d = delta.magnitude;
 
-            if (d < CaptureRange && !captured)
+            if (d < CaptureRange && !captured && _projectiles.Count < CaptureCapacity)
             {
                 // Object is close enough, grab it!
                 var projectile = sucker.collider.gameObject;

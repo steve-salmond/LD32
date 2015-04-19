@@ -32,6 +32,7 @@ public class RobotController : MonoBehaviour
     public Vector2 PatrolWaitInterval = new Vector2(2, 2);
 
     public Vector2 FireSpeedRange = new Vector2(15, 20);
+    public Vector2 FireAngularSpeedRange;
     public Transform FireEmitter;
     public GameObject FireProjectile;
     public float FireRange = 20;
@@ -107,6 +108,7 @@ public class RobotController : MonoBehaviour
         var speed = Random.Range(FireSpeedRange.x, FireSpeedRange.y);
         var direction = (FireEmitter.TransformPoint(Vector3.right) - FireEmitter.position).normalized;
         r.velocity = (direction * speed);
+        r.angularVelocity = Random.Range(FireAngularSpeedRange.x, FireAngularSpeedRange.y);
 
         // Play fire effect.
         var parent = FireEmitter.transform;
@@ -149,8 +151,7 @@ public class RobotController : MonoBehaviour
             _rigidbody2D.AddForce(new Vector2(dx, dy));
 
         // Update animator state.
-        // var runSpeed = _grounded ? Input.GetAxis("Horizontal") : 0;
-        _animator.SetFloat("RunSpeed", Input.GetAxis("Horizontal"));
+        _animator.SetFloat("RunSpeed", _input.x);
 
         // Update robot's overall facing.
         if (Mathf.Abs(velocity.x) < 0.25f)
