@@ -26,8 +26,11 @@ public class PlayerController : Singleton<PlayerController>
     /** Footstep effect. */
     public GameObject FootstepEffect;
 
+    public Damageable Damageable 
+    { get; private set; }
+
     public float Health
-    { get { return _damageable.Health; } }
+    { get { return Damageable.Health; } }
 
     public Gun Gun
     { get { return _gun; } }
@@ -35,7 +38,6 @@ public class PlayerController : Singleton<PlayerController>
     private Camera _camera;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
-    private Damageable _damageable;
     private Gun _gun;
 
     public bool Grounded { get; private set; }
@@ -51,7 +53,7 @@ public class PlayerController : Singleton<PlayerController>
         _camera = CameraController.Instance.Camera;
 	    _rigidbody2D = GetComponent<Rigidbody2D>();
 	    _animator = GetComponent<Animator>();
-	    _damageable = GetComponent<Damageable>();
+	    Damageable = GetComponent<Damageable>();
 	    _gun = GetComponentInChildren<Gun>();
 	}
 

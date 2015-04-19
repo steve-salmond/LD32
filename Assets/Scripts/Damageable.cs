@@ -19,8 +19,20 @@ public class Damageable : MonoBehaviour {
 
     private float _nextHit;
 
+    private float _initialHealth;
+
+    public void AddHealth(float value)
+    {
+        if (Health <= 0)
+            return;
+
+        Health = Mathf.Min(Health + value, _initialHealth);
+    }
+
     void Start()
     {
+        _initialHealth = Health;
+
         if (!DestroyEffectEmitter)
             DestroyEffectEmitter = transform;
     }
