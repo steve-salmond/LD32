@@ -17,6 +17,12 @@ public class Damageable : MonoBehaviour {
 
     public float DelayBetweenHits = 0.1f;
 
+    public bool FullHealth
+    { get { return Health >= _initialHealth;  } }
+
+    public bool Dead
+    { get { return Health <= 0; } }
+
     private float _nextHit;
 
     private float _initialHealth;

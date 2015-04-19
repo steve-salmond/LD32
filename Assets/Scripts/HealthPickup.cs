@@ -13,6 +13,9 @@ public class HealthPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        if (PlayerController.Instance.Damageable.FullHealth)
+            return;
+
         var go = collider.gameObject;
         if ((PickupMask.value & 1 << go.layer) == 0)
             return;
