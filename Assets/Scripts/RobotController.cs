@@ -31,6 +31,7 @@ public class RobotController : MonoBehaviour
     public Vector2 PatrolWalkInterval = new Vector2(5, 5);
     public Vector2 PatrolWaitInterval = new Vector2(2, 2);
 
+    public Vector2 FireInterval = new Vector2(1.5f, 1.5f);
     public Vector2 FireSpeedRange = new Vector2(15, 20);
     public Vector2 FireAngularSpeedRange;
     public Transform FireEmitter;
@@ -81,7 +82,8 @@ public class RobotController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1.5f);
+            var interval = Random.Range(FireInterval.x, FireInterval.y);
+            yield return new WaitForSeconds(interval);
 
             var hit = Physics2D.Raycast(Torso.position,
                 FacingRight ? Vector2.right : new Vector2(-1, 0), FireRange, FireMask);
