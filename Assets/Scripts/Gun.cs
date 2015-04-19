@@ -22,6 +22,9 @@ public class Gun : MonoBehaviour
     /** Range at which objects get sucked into the emitter. */
     public float CaptureRange = 1;
 
+    /** Layer mask for things that can be sucked. */
+    public LayerMask SuckMask;
+
     /** Layer mask for things that can be captured. */
     public LayerMask CaptureMask;
 
@@ -178,7 +181,7 @@ public class Gun : MonoBehaviour
     void Suck()
     {
         var direction = (Emitter.TransformPoint(Vector3.right) - Emitter.position).normalized;
-        var suckers = Physics2D.CircleCastAll(Emitter.position, SuckRadius, direction, SuckRange, CaptureMask);
+        var suckers = Physics2D.CircleCastAll(Emitter.position, SuckRadius, direction, SuckRange, SuckMask);
         var captured = false;
 
         foreach (var sucker in suckers)
@@ -190,7 +193,12 @@ public class Gun : MonoBehaviour
             var delta = Emitter.position - sucker.transform.position;
             var d = delta.magnitude;
 
-            if (d < CaptureRange && !captured && _projectiles.Count < CaptureCapacity)
+            var canCapture = d < CaptureRange 
+                && !captured 
+                && _projectiles.Count < CaptureCapacity
+                && (CaptureMask.value & 1 << sucker.collider.gameObject.layer) != 0;
+
+            if (canCapture)
             {
                 // Object is close enough, grab it!
                 var projectile = sucker.collider.gameObject;
