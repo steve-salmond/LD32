@@ -62,6 +62,24 @@ TextureImporter:
     21300114: HealthPack
     21300116: RecycleIcon
     21300118: RecycleBin
+    21300120: Junk01
+    21300122: Junk02
+    21300124: Junk03
+    21300126: Junk04
+    21300128: Junk05
+    21300130: Junk06
+    21300132: Junk07
+    21300134: Junk08
+    21300136: Junk09
+    21300138: Junk10
+    21300140: Junk11
+    21300142: Junk12
+    21300144: Junk13
+    21300146: Junk14
+    21300148: Junk15
+    21300150: Junk16
+    21300152: Junk17
+    21300154: Junk18
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -702,6 +720,186 @@ TextureImporter:
         height: 339
       alignment: 9
       pivot: {x: .480645686, y: .119531319}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk01
+      rect:
+        serializedVersion: 2
+        x: 1766
+        y: 926
+        width: 66
+        height: 99
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk02
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 928
+        width: 85
+        height: 99
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk03
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 937
+        width: 77
+        height: 90
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk04
+      rect:
+        serializedVersion: 2
+        x: 1773
+        y: 868
+        width: 238
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk05
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 781
+        width: 126
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk06
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 763
+        width: 122
+        height: 90
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk07
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 659
+        width: 103
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk08
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 664
+        width: 107
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk09
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 563
+        width: 150
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk10
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 583
+        width: 82
+        height: 67
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk11
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 431
+        width: 71
+        height: 105
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk12
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 456
+        width: 71
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk13
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 452
+        width: 82
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk14
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 347
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk15
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 345
+        width: 102
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk16
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 373
+        width: 65
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk17
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 263
+        width: 104
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Junk18
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 255
+        width: 100
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
