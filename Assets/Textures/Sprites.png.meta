@@ -80,6 +80,10 @@ TextureImporter:
     21300150: Junk16
     21300152: Junk17
     21300154: Junk18
+    21300156: Crate
+    21300158: Barrel
+    21300160: YardSign
+    21300162: Instructions
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -100,7 +104,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -181,26 +185,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Lollipop
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 1739
-        width: 104
-        height: 165
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Block
-      rect:
-        serializedVersion: 2
-        x: 1413
-        y: 1773
-        width: 86
-        height: 86
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: HeroGun
       rect:
         serializedVersion: 2
@@ -241,16 +225,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Frog
-      rect:
-        serializedVersion: 2
-        x: 1013
-        y: 1621
-        width: 170
-        height: 142
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: HeroPelvis
       rect:
         serializedVersion: 2
@@ -260,16 +234,6 @@ TextureImporter:
         height: 123
       alignment: 9
       pivot: {x: .37611714, y: .609529793}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Banana
-      rect:
-        serializedVersion: 2
-        x: 1232
-        y: 1631
-        width: 127
-        height: 94
-      alignment: 0
-      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: HeroRightupperLeg
       rect:
@@ -291,46 +255,6 @@ TextureImporter:
       alignment: 9
       pivot: {x: .19820182, y: .866891325}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Shuriken
-      rect:
-        serializedVersion: 2
-        x: 835
-        y: 1467
-        width: 134
-        height: 128
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Boot
-      rect:
-        serializedVersion: 2
-        x: 1029
-        y: 1457
-        width: 178
-        height: 112
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Flower
-      rect:
-        serializedVersion: 2
-        x: 1247
-        y: 1445
-        width: 116
-        height: 164
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Tomato
-      rect:
-        serializedVersion: 2
-        x: 1408
-        y: 1479
-        width: 105
-        height: 86
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: HeroRightLowerLeg
       rect:
         serializedVersion: 2
@@ -350,36 +274,6 @@ TextureImporter:
         height: 222
       alignment: 9
       pivot: {x: .601731956, y: .864114821}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Egg
-      rect:
-        serializedVersion: 2
-        x: 855
-        y: 1319
-        width: 81
-        height: 107
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Badger
-      rect:
-        serializedVersion: 2
-        x: 981
-        y: 1184
-        width: 230
-        height: 241
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Turnip
-      rect:
-        serializedVersion: 2
-        x: 1279
-        y: 1253
-        width: 121
-        height: 158
-      alignment: 0
-      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: HeroRightFoot
       rect:
@@ -898,6 +792,46 @@ TextureImporter:
         y: 255
         width: 100
         height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Crate
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1359
+        width: 218
+        height: 220
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Barrel
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 1369
+        width: 126
+        height: 199
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YardSign
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1071
+        width: 569
+        height: 264
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Instructions
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1397
+        width: 308
+        height: 182
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
