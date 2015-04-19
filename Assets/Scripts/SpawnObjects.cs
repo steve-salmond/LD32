@@ -39,6 +39,7 @@ public class SpawnObjects : MonoBehaviour
 
         var s = Random.Range(ScaleRange.x, ScaleRange.y);
         go.transform.localScale = new Vector3(s, s, s);
+        go.transform.parent = transform;
     }
 	
 }

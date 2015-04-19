@@ -76,6 +76,9 @@ public class Gun : MonoBehaviour
     /** Capture capacity. */
     public int CaptureCapacity = 20;
 
+    /** Effect to create when sucker is full.*/
+    public GameObject SuckFullEffect;
+
     /** Current number of objects captured. */
     public int CaptureCount
     { get { return _projectiles.Count; } }
@@ -113,11 +116,16 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
+        var full = _projectiles.Count >= CaptureCapacity;
+
         _blowing = Input.GetButton("Fire1");
-        _sucking = !_blowing && Input.GetButton("Fire2");
+        _sucking = !_blowing && Input.GetButton("Fire2") && !full;
+
 
         if (_blowing)
             Blow();
+        else if (Input.GetButtonDown("Fire2") && full)
+            SuckFull();       
         else if (_sucking)
             Suck();
 
@@ -125,6 +133,14 @@ public class Gun : MonoBehaviour
             system.enableEmission = _sucking;
         foreach (var system in _blowParticles)
             system.enableEmission = _blowing;
+    }
+
+    void SuckFull()
+    {
+        // Play full effect.
+        var parent = SuckEffect.transform;
+        var effect = Instantiate(SuckFullEffect, parent.position, parent.rotation) as GameObject;
+        effect.transform.parent = parent.transform;
     }
 
     IEnumerator SuckRoutine()
