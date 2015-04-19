@@ -173,6 +173,8 @@ public class Gun : MonoBehaviour
     {
         var direction = (Emitter.TransformPoint(Vector3.right) - Emitter.position).normalized;
         var suckers = Physics2D.CircleCastAll(Emitter.position, SuckRadius, direction, SuckRange, CaptureMask);
+        var captured = false;
+
         foreach (var sucker in suckers)
         {
             var r = sucker.rigidbody;
@@ -182,7 +184,7 @@ public class Gun : MonoBehaviour
             var delta = Emitter.position - sucker.transform.position;
             var d = delta.magnitude;
 
-            if (d < CaptureRange)
+            if (d < CaptureRange && !captured)
             {
                 // Object is close enough, grab it!
                 var projectile = sucker.collider.gameObject;
@@ -192,6 +194,9 @@ public class Gun : MonoBehaviour
                 // Capture the object.
                 Capture(sucker.collider.gameObject);
 
+                // No more captures this frame.
+                captured = true;
+                
                 // Play capture effect.
                 var parent = SuckEffect.transform;
                 var effect = Instantiate(CaptureEffect, parent.position, parent.rotation) as GameObject;
