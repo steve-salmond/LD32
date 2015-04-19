@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 public class DamagePart : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class DamagePart : MonoBehaviour
     public Vector2 SpeedRange = new Vector2(0, 20);
     public Vector2 AngularSpeedRange = new Vector2(-200, 200);
 
+    public bool Recycleable = true;
 
     /** Spawn the damage part. */
     public void Spawn(Damageable damageable)

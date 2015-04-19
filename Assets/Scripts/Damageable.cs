@@ -35,6 +35,12 @@ public class Damageable : MonoBehaviour {
 
         if (!DestroyEffectEmitter)
             DestroyEffectEmitter = transform;
+
+        // Set up recycle count.
+        var parts = GetComponentsInChildren<DamagePart>();
+        foreach (var part in parts)
+            if (part.Recycleable)
+                GameManager.Instance.AddRecycleable(part.gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

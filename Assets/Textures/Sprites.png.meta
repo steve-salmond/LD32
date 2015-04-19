@@ -60,6 +60,8 @@ TextureImporter:
     21300110: CaptureBar
     21300112: HealthPickup
     21300114: HealthPack
+    21300116: RecycleIcon
+    21300118: RecycleBin
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -680,6 +682,26 @@ TextureImporter:
         height: 133
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RecycleIcon
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 1567
+        width: 186
+        height: 180
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RecycleBin
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 1040
+        width: 476
+        height: 339
+      alignment: 9
+      pivot: {x: .480645686, y: .119531319}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
