@@ -55,6 +55,9 @@ TextureImporter:
     21300100: RobotLimb01
     21300102: RobotLimb02
     21300104: RobotLimb03
+    21300106: BloodDrop
+    21300108: Health
+    21300110: CaptureBar
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -625,6 +628,36 @@ TextureImporter:
         height: 251
       alignment: 9
       pivot: {x: .5, y: .798706412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BloodDrop
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 1905
+        width: 72
+        height: 106
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Health
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 1903
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CaptureBar
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1787
+        width: 330
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

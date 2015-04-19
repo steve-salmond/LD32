@@ -73,6 +73,9 @@ public class Gun : MonoBehaviour
     /** Capture capacity. */
     public int CaptureCapacity = 20;
 
+    /** Current number of objects captured. */
+    public int CaptureCount
+    { get { return _projectiles.Count; } }
 
     public string JunkLayer;
 

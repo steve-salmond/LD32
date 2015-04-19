@@ -13,6 +13,8 @@ public class Damageable : MonoBehaviour {
     public GameObject DestroyEffect;
     public Transform DestroyEffectEmitter;
 
+    public bool DeactivateOnDeath;
+
     public float DelayBetweenHits = 0.1f;
 
     private float _nextHit;
@@ -73,6 +75,9 @@ public class Damageable : MonoBehaviour {
             part.Spawn(this);
 
         // Kill this object.
-        Destroy(gameObject);
+        if (DeactivateOnDeath)
+            gameObject.SetActive(false);
+        else
+            Destroy(gameObject);
     }
 }

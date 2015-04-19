@@ -26,10 +26,17 @@ public class PlayerController : Singleton<PlayerController>
     /** Footstep effect. */
     public GameObject FootstepEffect;
 
+    public float Health
+    { get { return _damageable.Health; } }
+
+    public Gun Gun
+    { get { return _gun; } }
 
     private Camera _camera;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
+    private Damageable _damageable;
+    private Gun _gun;
 
     public bool Grounded { get; private set; }
     public bool FacingRight { get; private set; }
@@ -44,6 +51,8 @@ public class PlayerController : Singleton<PlayerController>
         _camera = CameraController.Instance.Camera;
 	    _rigidbody2D = GetComponent<Rigidbody2D>();
 	    _animator = GetComponent<Animator>();
+	    _damageable = GetComponent<Damageable>();
+	    _gun = GetComponentInChildren<Gun>();
 	}
 
     void Update()
@@ -74,6 +83,10 @@ public class PlayerController : Singleton<PlayerController>
 
     void UpdateMovement()
     {
+        // Check if player is dead.
+        if (Health <= 0)
+            return;
+
         // Get input force scaling factor.
         var scale = Grounded ? InputForceScale : AirborneForceScale;
 
@@ -106,6 +119,10 @@ public class PlayerController : Singleton<PlayerController>
 
     void UpdateJump()
     {
+        // Check if player is dead.
+        if (Health <= 0)
+            return;
+
         // Check if player wishes to jump and is grounded.
         if (!_jump || !Grounded)
             return;
@@ -126,6 +143,10 @@ public class PlayerController : Singleton<PlayerController>
 
     void UpdateAim()
     {
+        // Check if player is dead.
+        if (Health <= 0)
+            return;
+
         var ray = _camera.ScreenPointToRay(Input.mousePosition);
         var d = 0.0f;
         _worldPlane.Raycast(ray, out d);
