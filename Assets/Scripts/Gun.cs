@@ -222,18 +222,9 @@ public class Gun : MonoBehaviour
 
     void Capture(GameObject go)
     {
-        // Break any joints on the object.
-        var joint = go.GetComponent<Joint2D>();
-        if (joint)
-            Destroy(joint);
-
         // Unparent object and turn it into junk.
         go.layer = LayerMask.NameToLayer(JunkLayer);
         go.transform.parent = null;
-
-        // Chapture any child objects.
-        while (go.transform.childCount > 0)
-            Capture(go.transform.GetChild(0).gameObject);
     }
 
 

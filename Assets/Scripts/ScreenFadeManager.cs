@@ -11,17 +11,19 @@ public class ScreenFadeManager : Singleton<ScreenFadeManager>
 
     private float _attack;
     private float _decay;
+    private float _wait;
 
     void Start()
     {
         _image = GetComponent<Image>();
     }
 
-    public void Fade(Color color, float attack, float decay)
+    public void Fade(Color color, float attack, float decay, float wait = 0)
     {
         _targetColor = color;
         _attack = attack;
         _decay = decay;
+        _wait = wait;
         StopAllCoroutines();
         StartCoroutine("FadeRoutine");
     }
@@ -49,7 +51,11 @@ public class ScreenFadeManager : Singleton<ScreenFadeManager>
         // Now at target color.
         _image.color = c1;
 
-        // Fade down to black.
+        if (_wait > 0)
+            yield return new WaitForSeconds(_wait);
+
+        // Fade back to transparent.
+        var transparent = new Color(c1.r, c1.g, c1.b, 0);
         if (_decay > 0)
         {
             var t0 = Time.time;
@@ -58,13 +64,13 @@ public class ScreenFadeManager : Singleton<ScreenFadeManager>
             {
                 var t = Time.time;
                 var f = (t - t0) / (t1 - t0);
-                _image.color = Color.Lerp(c1, Color.black, f);
+                _image.color = Color.Lerp(c1, transparent, f);
                 yield return wait;
             }
         }
 
-        // Now fully black.
-        _image.color = Color.black;
+        // Now fully transparent.
+        _image.color = transparent;
 
     }
 }
