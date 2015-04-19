@@ -52,6 +52,21 @@ public class Gun : MonoBehaviour
     /** Sucking end sound. */
     public AudioSource SuckStopSound;
 
+    /** Blowing start sound. */
+    public AudioSource BlowStartSound;
+
+    /** Blowing loop sound. */
+    public AudioSource BlowLoopSound;
+
+    /** Blowing end sound. */
+    public AudioSource BlowStopSound;
+
+    /** Capture effect. */
+    public GameObject CaptureEffect;
+
+    /** Fire effect. */
+    public GameObject FireEffect;
+
     /** Time that next projectile can be fired. */
     private float _nextProjectile;
 
@@ -100,12 +115,10 @@ public class Gun : MonoBehaviour
         var wait = new WaitForEndOfFrame();
         while (gameObject.activeSelf)
         {
-
             while (!_sucking)
                 yield return wait;
 
             SuckStartSound.Play();
-
             yield return new WaitForSeconds(0.5f);
             SuckLoopSound.Play();
 
@@ -113,11 +126,8 @@ public class Gun : MonoBehaviour
                 yield return wait;
 
             SuckStopSound.Play();
-
             yield return new WaitForSeconds(0.1f);
             SuckLoopSound.Stop();
-
-            yield return wait;
         }
     }
 
@@ -126,7 +136,19 @@ public class Gun : MonoBehaviour
         var wait = new WaitForEndOfFrame();
         while (gameObject.activeSelf)
         {
-            yield return wait;
+            while (!_blowing)
+                yield return wait;
+
+            BlowStartSound.Play();
+            yield return new WaitForSeconds(0.5f);
+            BlowLoopSound.Play();
+
+            while (_blowing)
+                yield return wait;
+
+            BlowStopSound.Play();
+            yield return new WaitForSeconds(0.1f);
+            BlowLoopSound.Stop();
         }
     }
 
@@ -158,6 +180,11 @@ public class Gun : MonoBehaviour
                 var projectile = sucker.collider.gameObject;
                 projectile.SetActive(false);
                 _projectiles.Enqueue(projectile);
+
+                // Play capture effect.
+                var parent = SuckEffect.transform;
+                var effect = Instantiate(CaptureEffect, parent.position, parent.rotation) as GameObject;
+                effect.transform.parent = parent.transform;
             }
             else
             {
@@ -198,6 +225,11 @@ public class Gun : MonoBehaviour
 
         // Schedule next projectile.
         _nextProjectile = Time.time + Random.Range(DelayRange.x, DelayRange.y);
+
+        // Play fire effect.
+        var parent = BlowEffect.transform;
+        var effect = Instantiate(FireEffect, parent.position, parent.rotation) as GameObject;
+        effect.transform.parent = parent.transform;
     }
 
 }
