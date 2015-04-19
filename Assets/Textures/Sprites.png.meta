@@ -84,6 +84,7 @@ TextureImporter:
     21300158: Barrel
     21300160: YardSign
     21300162: Instructions
+    21300164: RecycleSign
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -832,6 +833,16 @@ TextureImporter:
         y: 1397
         width: 308
         height: 182
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RecycleSign
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 1602
+        width: 300
+        height: 180
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
