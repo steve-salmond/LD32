@@ -19,7 +19,14 @@ public class PlayerController : Singleton<PlayerController>
     public float MovingDrag = 0;
 
     public float AimOffsetScale = 5;
-    
+
+    /** Jump effect. */
+    public GameObject JumpEffect;
+
+    /** Footstep effect. */
+    public GameObject FootstepEffect;
+
+
     private Camera _camera;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
@@ -109,6 +116,10 @@ public class PlayerController : Singleton<PlayerController>
         // Inform animator that jump has occurred.
         _animator.SetTrigger("Jump");
 
+        // Play jump effect
+        var effect = Instantiate(JumpEffect, transform.position, transform.rotation) as GameObject;
+        effect.transform.parent = transform.transform;
+
         // Don't jump until next frame.
         _jump = false;
     }
@@ -135,5 +146,14 @@ public class PlayerController : Singleton<PlayerController>
         Torso.localScale = flip ? Vector3.one : new Vector3(-1, 1, 1);
 
         CameraController.Instance.AimOffset = delta.normalized * AimOffsetScale;
+    }
+
+    void Footstep()
+    {
+        if (!Grounded)
+            return;
+        
+        var effect = Instantiate(FootstepEffect, transform.position, transform.rotation) as GameObject;
+        effect.transform.parent = transform.transform;
     }
 }
