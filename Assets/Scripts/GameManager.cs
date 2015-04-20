@@ -18,7 +18,7 @@ public class GameManager : Singleton<GameManager>
     {
         Application.targetFrameRate = FrameRate;
 
-        ScreenFadeManager.Instance.Fade(Color.black, 0, 3);
+        ScreenFadeManager.Instance.Fade(Color.black, 0, 3, 2f);
 
         StartCoroutine("GameRoutine");
     }
